@@ -1,6 +1,5 @@
 import "../App.css";
 import React from "react";
-import "./PublicHome.css";
 
 export default function PublicHome() {
   return (
