@@ -25,7 +25,6 @@
   width: 100%;
 }
 .login-label {
-  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,10 +42,14 @@
 .login-label input {
   width: 90%;
   height: 40px;
-  padding: 8px 12px;
   outline: none;
   background-color: rgb(245, 248, 250);
   border: none;
+  font-size: 18px;
+  color: rgb(20, 23, 26);
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
 }
 
 .btn-form {
