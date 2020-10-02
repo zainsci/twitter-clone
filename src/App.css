@@ -34,3 +34,203 @@
 .btn-signup:hover {
   background-color: var(--hover-dark) !important;
 }
+
+/*  ********************* Styling for Public Home *********************  */
+.public-home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ******************* left Half ******************* */
+.left-half {
+  width: 50%;
+  height: 100%;
+  background-color: #71c9f8;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.twitter-svg {
+  width: 150vh;
+  height: 150vh;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+.twitter-info-container {
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.twitter-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  color: white;
+  font-size: 24px;
+  z-index: 100;
+}
+.twitter-info-svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+}
+
+/* ******************* Right Half ******************* */
+.right-half {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right-half-inner {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.right-half-inner h1 {
+  margin-bottom: 60px;
+}
+.right-half-inner p {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.right-half-inner .btn {
+  width: 90% !important;
+  text-align: center;
+}
+
+/* ******************* Bottom Half ******************* */
+.bottom-sign-buttons {
+  display: none;
+}
+
+/* ******************* Media Queries ******************* */
+@media (max-width: 800px) {
+  .public-home {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .left-half {
+    width: 100%;
+    height: fit-content;
+  }
+  .right-half {
+    width: 100%;
+    height: fit-content;
+    padding: 40px 0;
+  }
+  .twitter-info-container {
+    width: fit-content;
+  }
+  .twitter-svg {
+    width: 50vh;
+    bottom: 10%;
+    left: 80%;
+  }
+  .bottom-sign-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    height: 15%;
+    background-color: white;
+  }
+  .bottom-sign-buttons .btn {
+    width: max-content;
+    margin-right: 15px;
+  }
+}
+
+/* ********************* Styling for Login Page ********************* */
+.login {
+  max-width: 600px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+.login-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.login-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  border-bottom: 2px solid rgb(101, 119, 134);
+  border-radius: 2px;
+  background-color: rgb(245, 248, 250);
+}
+.login-label-focus {
+  color: var(--primary);
+}
+.login-label input {
+  width: 90%;
+  height: 40px;
+  outline: none;
+  background-color: rgb(245, 248, 250);
+  border: none;
+  font-size: 18px;
+  color: rgb(20, 23, 26);
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.btn-form {
+  width: 100%;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.btn-form:focus {
+  outline: none;
+}
+.btn-form:hover {
+  background-color: var(--hover-dark);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(27, 149, 224);
+}
+a:hover {
+  text-decoration: underline;
+}
