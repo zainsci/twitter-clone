@@ -1,7 +1,12 @@
 :root {
   --primary: rgb(29, 161, 242);
-  --hover: rgba(29, 161, 242, 0.1);
+  --primary-link: rgb(27, 149, 224);
+  --primary-light: rgb(113, 201, 248);
+  --hover-primary: rgba(29, 161, 242, 0.1);
   --hover-dark: rgb(26, 145, 218);
+  --text: rgb(20, 23, 26);
+  --background-light: rgb(245, 248, 250);
+  --border-primary: rgb(101, 119, 134);
 }
 .App {
   width: 100%;
@@ -29,7 +34,7 @@
 }
 
 .btn-login:hover {
-  background-color: var(--hover);
+  background-color: var(--hover-primary);
 }
 .btn-signup:hover {
   background-color: var(--hover-dark) !important;
@@ -48,7 +53,7 @@
 .left-half {
   width: 50%;
   height: 100%;
-  background-color: #71c9f8;
+  background-color: var(--primary-light);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -192,9 +197,9 @@
   width: 100%;
   margin-bottom: 15px;
   padding: 5px 10px;
-  border-bottom: 2px solid rgb(101, 119, 134);
+  border-bottom: 2px solid var(--border-primary);
   border-radius: 2px;
-  background-color: rgb(245, 248, 250);
+  background-color: var(--background-light);
 }
 .login-label-focus {
   color: var(--primary);
@@ -203,10 +208,10 @@
   width: 90%;
   height: 40px;
   outline: none;
-  background-color: rgb(245, 248, 250);
+  background-color: var(--background-light);
   border: none;
   font-size: 18px;
-  color: rgb(20, 23, 26);
+  color: var(--text);
   font-weight: 400;
   font-family: inherit;
 }
@@ -229,7 +234,7 @@
 
 a {
   text-decoration: none;
-  color: rgb(27, 149, 224);
+  color: var(--primary-link);
 }
 a:hover {
   text-decoration: underline;
