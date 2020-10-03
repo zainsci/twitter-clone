@@ -18,11 +18,11 @@ export default function Login() {
       <h2>Log in to Twitter.</h2>
       <div className="login-form-container">
         <form className="login-form">
-          <div className="login-label">
+          <div className="auth-label">
             <label for="login-username">Phone, email or username</label>
             <input type="text" id="login-username" />
           </div>
-          <div className="login-label">
+          <div className="auth-label">
             <label for="login-password">Password</label>
             <input type="password" id="login-password" />
           </div>
