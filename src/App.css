@@ -304,36 +304,6 @@ a:hover {
 .dob-c3 {
   width: 30% !important;
 }
-.tos-text {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 15px;
-}
-.sbtn03 {
-  width: 100%;
-  padding: 14px;
-}
-.signup-ce02 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.signup-ced {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.signup-ced p {
-  margin-right: 20px;
-}
-.signup-ced input {
-  margin-right: 20px;
-  width: 32px;
-  height: 32px;
-}
 .signup-back {
   box-sizing: content-box;
   padding: 0;
