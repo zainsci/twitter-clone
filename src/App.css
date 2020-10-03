@@ -38,6 +38,9 @@
   color: white;
   border-color: var(--primary);
 }
+.btn-primary:hover {
+  background-color: var(--hover-dark);
+}
 .btn-secondary {
   background-color: transparent;
   color: var(--primary);
@@ -292,6 +295,15 @@ a:hover {
 }
 .dob-c3 {
   width: 30% !important;
+}
+.tos-text {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.sbtn03 {
+  width: 100%;
+  padding: 14px;
 }
 
 /* ******************* Media Queries ******************* */

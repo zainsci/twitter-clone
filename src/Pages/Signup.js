@@ -9,7 +9,7 @@ for (let i = 1900; i < 2021; i++) {
   years.push(<option>{i}</option>);
 }
 
-export default function Signup() {
+function Signup() {
   return (
     <div className="signup-popup">
       <div className="auth-page">
@@ -79,6 +79,45 @@ export default function Signup() {
                 </select>
               </div>
             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Signup03() {
+  return (
+    <div className="signup-popup">
+      <div className="auth-page">
+        <strong>Step 3 / 5</strong>
+        <button className="btn btn-primary signup-next">Next</button>
+        <div className="form-container">
+          <form className="auth-form">
+            <h2 className="ca-heading">Create your account</h2>
+            <div className="auth-label">
+              <input type="text" id="signup-name" />
+            </div>
+            <div className="auth-label">
+              <input type="text" id="signup-phone" />
+            </div>
+            <div className="auth-label">
+              <input type="text" id="signup-dob" />
+            </div>
+            <div className="tos-text">
+              <div>
+                <span>By signing up, you agree to the </span>
+                <a href="https://twitter.com/tos#new">Terms of Service </a>
+                and <a href="https://twitter.com/privacy">Privacy Policy</a>,
+                including{" "}
+                <a href="https://support.twitter.com/articles/20170514">
+                  Cookie Use{" "}
+                </a>
+                . Others will be able to find you by email or phone number when
+                provided · <a href="/privacy-policy">Privacy Options</a>
+              </div>
+            </div>
+            <button className="btn btn-primary sbtn03">Sign up</button>
           </form>
         </div>
       </div>
