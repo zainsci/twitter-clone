@@ -165,7 +165,7 @@ a:hover {
 }
 
 /* ********************* Styling for Login Page ********************* */
-.login {
+.auth-page {
   max-width: 600px;
   height: 100%;
   margin: auto;
@@ -173,13 +173,14 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px;
+  padding: 15px 30px;
+  position: relative;
 }
-.login h2 {
+.auth-page h2 {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-.login-form-container {
+.form-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -187,13 +188,14 @@ a:hover {
   align-items: center;
 }
 
-.login-form {
-  max-width: 500px;
+.auth-form {
+  max-width: 600px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  margin: auto;
 }
 .auth-label {
   width: 100%;
@@ -202,7 +204,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   padding: 5px 10px;
   border-bottom: 2px solid var(--border-primary);
   border-radius: 2px;
@@ -213,7 +215,8 @@ a:hover {
 }
 .auth-label input,
 .auth-label select {
-  width: 90%;
+  width: 100%;
+  max-width: 540px;
   height: 30px;
   outline: none;
   background-color: var(--background-light);
@@ -222,6 +225,73 @@ a:hover {
   color: var(--text);
   font-weight: 400;
   font-family: inherit;
+}
+
+/* ************************** Signup Page ************************** */
+.signup-popup {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  background-color: white;
+  margin-top: 55px;
+  border-radius: 15px;
+}
+.signup-popup::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+.signup-next {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 6px 16px;
+}
+.ca-heading {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.dob-info {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.dob-info p {
+  color: var(--text);
+}
+
+.word-counter {
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+
+.date-of-birth {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dob-c1 {
+  width: 50% !important;
+  margin-right: 15px;
+}
+.dob-c2 {
+  width: 20% !important;
+  margin-right: 15px;
+}
+.dob-c3 {
+  width: 30% !important;
 }
 
 /* ******************* Media Queries ******************* */
