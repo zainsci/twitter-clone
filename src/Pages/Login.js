@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div className="login">
+    <div className="auth-page">
       <svg
         viewBox="0 0 24 24"
         className="twitter-svg-logo"
@@ -16,8 +16,8 @@ export default function Login() {
         </g>
       </svg>
       <h2>Log in to Twitter.</h2>
-      <div className="login-form-container">
-        <form className="login-form">
+      <div className="form-container">
+        <form className="auth-form">
           <div className="auth-label">
             <label for="login-username">Phone, email or username</label>
             <input type="text" id="login-username" />
