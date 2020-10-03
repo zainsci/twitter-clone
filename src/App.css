@@ -46,6 +46,13 @@
   color: var(--primary);
   border-color: var(--primary);
 }
+.btn-link {
+  border: none;
+  color: var(--primary);
+}
+.btn-link:hover {
+  background-color: var(--background-light);
+}
 .btn-signup {
   color: white;
   background-color: var(--primary) !important;
@@ -171,10 +178,11 @@ a:hover {
 .auth-page {
   max-width: 600px;
   height: 100%;
+  min-height: 650px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px 30px;
   position: relative;
@@ -304,6 +312,35 @@ a:hover {
 .sbtn03 {
   width: 100%;
   padding: 14px;
+}
+.signup-ce02 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.signup-ced {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.signup-ced p {
+  margin-right: 20px;
+}
+.signup-ced input {
+  margin-right: 20px;
+  width: 32px;
+  height: 32px;
+}
+.signup-back {
+  box-sizing: content-box;
+  padding: 0;
+  padding: 8px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 
 /* ******************* Media Queries ******************* */
