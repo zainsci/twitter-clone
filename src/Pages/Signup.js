@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -59,6 +59,15 @@ export default SignUp;
 
 // Step One Of SignUp
 function Step01(props) {
+  const [useEmail, setUseEmail] = useState(false);
+  function changeInput(e) {
+    e.preventDefault();
+    if (!useEmail) {
+      setUseEmail(true);
+    } else {
+      setUseEmail(false);
+    }
+  }
   return (
     <div className="form-container">
       <form className="auth-form">
@@ -69,10 +78,12 @@ function Step01(props) {
         </div>
         <div className="word-counter">0/50</div>
         <div className="auth-label">
-          <label htmlFor="signup-phone">Phone</label>
-          <input type="text" id="signup-phone" />
+          <label htmlFor="signup-phone">{useEmail ? "Email" : "Phone"}</label>
+          <input type={useEmail ? "email" : "text"} id="signup-phone" />
         </div>
-        <a href="/change-to-email">Use email instead</a>
+        <a href="/change-to-email" onClick={changeInput}>
+          Use {useEmail ? "phone" : "email"} instead
+        </a>
         <div className="dob-info">
           <strong>Date of birth</strong>
           <p>
