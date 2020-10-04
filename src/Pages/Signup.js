@@ -64,12 +64,12 @@ function Step01(props) {
       <form className="auth-form">
         <h2 className="ca-heading">Create your account</h2>
         <div className="auth-label">
-          <label for="signup-name">Name</label>
+          <label htmlFor="signup-name">Name</label>
           <input type="text" id="signup-name" />
         </div>
         <div className="word-counter">0/50</div>
         <div className="auth-label">
-          <label for="signup-phone">Phone</label>
+          <label htmlFor="signup-phone">Phone</label>
           <input type="text" id="signup-phone" />
         </div>
         <a href="/change-to-email">Use email instead</a>
@@ -187,13 +187,13 @@ function pMonths() {
     "November",
     "December",
   ];
-  return months.map((x) => <option>{x}</option>);
+  return months.map((x) => <option key={x}>{x}</option>);
 }
 // Printing Days in Select Input
 function pDays() {
   let days = [];
   for (let i = 1; i < 32; i++) {
-    days.push(<option>{i}</option>);
+    days.push(<option key={i}>{i}</option>);
   }
   return days;
 }
@@ -201,7 +201,7 @@ function pDays() {
 function pYears() {
   let years = [];
   for (let i = 1900; i < 2021; i++) {
-    years.push(<option>{i}</option>);
+    years.push(<option key={i}>{i}</option>);
   }
   return years;
 }
