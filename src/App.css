@@ -53,6 +53,10 @@
 .btn-link:hover {
   background-color: var(--background-light);
 }
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .btn-signup {
   color: white;
   background-color: var(--primary) !important;
