@@ -228,6 +228,10 @@ a:hover {
   border-radius: 2px;
   background-color: var(--background-light);
 }
+.auth-label:focus-within {
+  color: var(--primary);
+  border-color: var(--primary);
+}
 .auth-label-focus {
   color: var(--primary);
 }
