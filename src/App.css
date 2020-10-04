@@ -249,6 +249,10 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 .signup-popup {
   width: 600px;
