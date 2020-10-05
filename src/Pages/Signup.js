@@ -14,7 +14,15 @@ class SignUp extends React.Component {
 
   getData = (data) => {
     this.setState({ signupData: data });
-    console.log(data);
+    if (
+      data.name !== "" &&
+      data.phone !== "" &&
+      data.month !== "" &&
+      data.day !== "" &&
+      data.year !== ""
+    ) {
+      this.state.formValid = true;
+    }
   };
 
   render() {
