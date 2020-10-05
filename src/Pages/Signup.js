@@ -13,11 +13,11 @@ class SignUp extends React.Component {
 
   render() {
     let step;
-    if (this.state.isStep01 == true) {
+    if (this.state.isStep01 === true) {
       step = <Step01 />;
-    } else if (this.state.isStep02 == true) {
+    } else if (this.state.isStep02 === true) {
       step = <Step02 />;
-    } else if (this.state.isStep03 == true) {
+    } else if (this.state.isStep03 === true) {
       step = <Step03 />;
     } else {
       step = <h1>Someting Went Wrong.</h1>;
@@ -62,11 +62,7 @@ function Step01(props) {
   const [useEmail, setUseEmail] = useState(false);
   function changeInput(e) {
     e.preventDefault();
-    if (!useEmail) {
-      setUseEmail(true);
-    } else {
-      setUseEmail(false);
-    }
+    !useEmail ? setUseEmail(true) : setUseEmail(false);
   }
   return (
     <div className="form-container">
