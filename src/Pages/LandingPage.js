@@ -25,7 +25,7 @@ class LandingPage extends React.Component {
   showSignupWin(e) {
     e.preventDefault();
     this.setState({
-      isLandingPage: false,
+      isLandingPage: true,
       isLoginWin: false,
       isSignupWin: true,
     });
@@ -35,6 +35,7 @@ class LandingPage extends React.Component {
       <>
         {this.state.isLandingPage ? (
           <>
+            {this.state.isSignupWin ? <SignUp /> : null}
             <div className="public-home">
               <div className="bottom-sign-buttons">
                 <a
@@ -138,8 +139,6 @@ class LandingPage extends React.Component {
           </>
         ) : this.state.isLoginWin ? (
           <Login />
-        ) : this.state.isSignupWin ? (
-          <SignUp />
         ) : (
           <h1>404: Not Found</h1>
         )}
