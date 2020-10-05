@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import "./CSS/Helper.css";
-import PublicHome from "./Pages/PublicHome";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
     <div className="App">
-      <PublicHome></PublicHome>
+      <LandingPage></LandingPage>
     </div>
   );
 }
