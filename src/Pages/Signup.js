@@ -236,13 +236,28 @@ function Step03(props) {
       <form className="auth-form">
         <h2 className="ca-heading">Create your account</h2>
         <div className="auth-label">
-          <input type="text" id="signup-name" />
+          <input
+            type="text"
+            id="signup-name"
+            value={props.signupData.name}
+            readOnly={true}
+          />
         </div>
         <div className="auth-label">
-          <input type="text" id="signup-phone" />
+          <input
+            type="text"
+            id="signup-phone"
+            value={props.signupData.phone}
+            readOnly={true}
+          />
         </div>
         <div className="auth-label">
-          <input type="text" id="signup-dob" />
+          <input
+            type="text"
+            id="signup-dob"
+            readOnly={true}
+            value={`${props.signupData.month} ${props.signupData.day}, ${props.signupData.year}`}
+          />
         </div>
         <div className="tos-text">
           <div>
