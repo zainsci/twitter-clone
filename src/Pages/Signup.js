@@ -13,7 +13,8 @@ class SignUp extends React.Component {
   }
 
   getData = (data) => {
-    this.signupData = data;
+    this.setState({ signupData: data });
+    console.log(data);
   };
 
   render() {
@@ -63,107 +64,119 @@ class SignUp extends React.Component {
 export default SignUp;
 
 // Step One Of SignUp
-function Step01(props) {
-  const [useEmail, setUseEmail] = useState(false);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
+class Step01 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      useEmail: false,
+      name: "",
+      phone: "",
+      day: "",
+      month: "",
+      year: "",
+    };
+  }
 
-  function getInfo(props) {
-    console.log(name);
-    console.log(phone);
-    console.log(day);
-    console.log(month);
-    console.log(year);
+  sendData = () => {
     let data = {};
-    data.name = name;
-    data.phone = phone;
-    data.month = month;
-    data.day = day;
-    data.year = year;
-  }
+    this.setState({ name: document.getElementById("signup-name").value });
+    this.setState({ phone: document.getElementById("signup-phone").value });
+    this.setState({ day: document.getElementById("signup-day").value });
+    this.setState({ year: document.getElementById("signup-year").value });
+    this.setState({ month: document.getElementById("signup-month").value });
+    data.name = document.getElementById("signup-name").value;
+    data.phone = document.getElementById("signup-phone").value;
+    data.month = document.getElementById("signup-month").value;
+    data.day = document.getElementById("signup-day").value;
+    data.year = document.getElementById("signup-year").value;
+    this.props.signupData(data);
+  };
 
-  function countWords(e) {
-    setName(e.target.value);
+  countWords(e) {
+    this.setState({ name: e.target.value });
   }
-  function changeInput(e) {
+  changeInput(e) {
     e.preventDefault();
-    !useEmail ? setUseEmail(true) : setUseEmail(false);
+    !this.state.useEmail
+      ? this.setState({ useEmail: true })
+      : this.setState({ useEmail: false });
   }
-  return (
-    <div className="form-container">
-      <form className="auth-form">
-        <h2 className="ca-heading">Create your account</h2>
-        <div className="auth-label">
-          <label htmlFor="signup-name">Name</label>
-          <input
-            type="text"
-            id="signup-name"
-            maxLength="50"
-            value={name}
-            onChange={countWords}
-          />
-        </div>
-        <div className="word-counter">{name.length}/50</div>
-        <div className="auth-label">
-          <label htmlFor="signup-phone">{useEmail ? "Email" : "Phone"}</label>
-          <input
-            type={useEmail ? "email" : "text"}
-            id="signup-phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </div>
-        <a href="/change-to-email" onClick={changeInput}>
-          Use {useEmail ? "phone" : "email"} instead
-        </a>
-        <div className="dob-info">
-          <strong>Date of birth</strong>
-          <p>
-            This will not be shown publicly. Confirm your own age, even if this
-            account is for a business, a pet, or somthing else.
-          </p>
-        </div>
-        <div className="date-of-birth">
-          <div className="auth-label dob-c1">
-            <label>Month</label>
-            <select
-              value={month}
-              onChange={(e) => setMonth(e.target.value)}
-              id="signup-month"
-            >
-              <option></option>
-              {pMonths()}
-            </select>
+  render() {
+    return (
+      <div className="form-container">
+        <form className="auth-form">
+          <h2 className="ca-heading">Create your account</h2>
+          <div className="auth-label">
+            <label htmlFor="signup-name">Name</label>
+            <input
+              type="text"
+              id="signup-name"
+              maxLength="50"
+              value={this.state.name}
+              onChange={this.sendData}
+            />
           </div>
-          <div className="auth-label dob-c2">
-            <label>Day</label>
-            <select
-              value={day}
-              onChange={(e) => setDay(e.target.value)}
-              id="signup-day"
-            >
-              <option></option>
-              {pDays()}
-            </select>
+          <div className="word-counter">{this.state.name.length}/50</div>
+          <div className="auth-label">
+            <label htmlFor="signup-phone">
+              {this.state.useEmail ? "Email" : "Phone"}
+            </label>
+            <input
+              type={this.state.useEmail ? "email" : "text"}
+              id="signup-phone"
+              value={this.state.phone}
+              onChange={this.sendData}
+            />
           </div>
-          <div className="auth-label dob-c3">
-            <label>Year</label>
-            <select
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-              id="signup-year"
-            >
-              <option></option>
-              {pYears().reverse()}
-            </select>
+          <a href="/change-to-email" onClick={this.changeInput}>
+            Use {this.state.useEmail ? "phone" : "email"} instead
+          </a>
+          <div className="dob-info">
+            <strong>Date of birth</strong>
+            <p>
+              This will not be shown publicly. Confirm your own age, even if
+              this account is for a business, a pet, or somthing else.
+            </p>
           </div>
-        </div>
-      </form>
-    </div>
-  );
+          <div className="date-of-birth">
+            <div className="auth-label dob-c1">
+              <label htmlFor="signup-month">Month</label>
+              <select
+                value={this.state.month}
+                onChange={this.sendData}
+                id="signup-month"
+              >
+                <option></option>
+                {pMonths()}
+              </select>
+            </div>
+            <div className="auth-label dob-c2">
+              <label htmlFor="signup-day">Day</label>
+              <select
+                value={this.state.day}
+                onChange={this.sendData}
+                id="signup-day"
+              >
+                <option></option>
+                {pDays()}
+              </select>
+            </div>
+            <div className="auth-label dob-c3">
+              <label htmlFor="signup-year">Year</label>
+              <select
+                value={this.state.year}
+                onChange={this.sendData}
+                id="signup-year"
+              >
+                <option></option>
+                {pYears().reverse()}
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 // Step Two Of SignUp
