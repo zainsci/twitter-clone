@@ -17,11 +17,23 @@ class SignUp extends React.Component {
     if (
       data.name !== "" &&
       data.phone !== "" &&
+      data.phone.length > 11 &&
       data.month !== "" &&
       data.day !== "" &&
       data.year !== ""
     ) {
-      this.state.formValid = true;
+      this.setState({ formValid: true });
+    }
+  };
+  showNextStep = () => {
+    if (this.state.isStep01) {
+      this.setState({ isStep01: false });
+      this.setState({ isStep02: true });
+      this.setState({ isStep03: false });
+    } else if (this.state.isStep02) {
+      this.setState({ isStep01: false });
+      this.setState({ isStep02: false });
+      this.setState({ isStep03: true });
     }
   };
 
@@ -59,6 +71,7 @@ class SignUp extends React.Component {
                   ? "btn btn-primary signup-next"
                   : "btn btn-primary signup-next disabled"
               }
+              onClick={this.showNextStep}
             >
               Next
             </button>
