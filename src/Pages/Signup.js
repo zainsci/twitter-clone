@@ -60,6 +60,11 @@ export default SignUp;
 // Step One Of SignUp
 function Step01(props) {
   const [useEmail, setUseEmail] = useState(false);
+  const [wordCounter, setWordCounter] = useState("");
+
+  function countWords(e) {
+    setWordCounter(e.target.value);
+  }
   function changeInput(e) {
     e.preventDefault();
     !useEmail ? setUseEmail(true) : setUseEmail(false);
@@ -70,9 +75,15 @@ function Step01(props) {
         <h2 className="ca-heading">Create your account</h2>
         <div className="auth-label">
           <label htmlFor="signup-name">Name</label>
-          <input type="text" id="signup-name" />
+          <input
+            type="text"
+            id="signup-name"
+            maxLength="50"
+            value={wordCounter}
+            onChange={countWords}
+          />
         </div>
-        <div className="word-counter">0/50</div>
+        <div className="word-counter">{wordCounter.length}/50</div>
         <div className="auth-label">
           <label htmlFor="signup-phone">{useEmail ? "Email" : "Phone"}</label>
           <input type={useEmail ? "email" : "text"} id="signup-phone" />
