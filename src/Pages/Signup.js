@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -8,17 +8,22 @@ class SignUp extends React.Component {
       isStep02: false,
       isStep03: false,
       formValid: false,
+      signupData: {},
     };
   }
+
+  getData = (data) => {
+    this.signupData = data;
+  };
 
   render() {
     let step;
     if (this.state.isStep01 === true) {
-      step = <Step01 />;
+      step = <Step01 signupData={this.getData} />;
     } else if (this.state.isStep02 === true) {
       step = <Step02 />;
     } else if (this.state.isStep03 === true) {
-      step = <Step03 />;
+      step = <Step03 signupData={this.state.signupData} />;
     } else {
       step = <h1>Someting Went Wrong.</h1>;
     }
@@ -60,10 +65,28 @@ export default SignUp;
 // Step One Of SignUp
 function Step01(props) {
   const [useEmail, setUseEmail] = useState(false);
-  const [wordCounter, setWordCounter] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+
+  function getInfo(props) {
+    console.log(name);
+    console.log(phone);
+    console.log(day);
+    console.log(month);
+    console.log(year);
+    let data = {};
+    data.name = name;
+    data.phone = phone;
+    data.month = month;
+    data.day = day;
+    data.year = year;
+  }
 
   function countWords(e) {
-    setWordCounter(e.target.value);
+    setName(e.target.value);
   }
   function changeInput(e) {
     e.preventDefault();
@@ -79,14 +102,19 @@ function Step01(props) {
             type="text"
             id="signup-name"
             maxLength="50"
-            value={wordCounter}
+            value={name}
             onChange={countWords}
           />
         </div>
-        <div className="word-counter">{wordCounter.length}/50</div>
+        <div className="word-counter">{name.length}/50</div>
         <div className="auth-label">
           <label htmlFor="signup-phone">{useEmail ? "Email" : "Phone"}</label>
-          <input type={useEmail ? "email" : "text"} id="signup-phone" />
+          <input
+            type={useEmail ? "email" : "text"}
+            id="signup-phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
         <a href="/change-to-email" onClick={changeInput}>
           Use {useEmail ? "phone" : "email"} instead
@@ -101,21 +129,33 @@ function Step01(props) {
         <div className="date-of-birth">
           <div className="auth-label dob-c1">
             <label>Month</label>
-            <select>
+            <select
+              value={month}
+              onChange={(e) => setMonth(e.target.value)}
+              id="signup-month"
+            >
               <option></option>
               {pMonths()}
             </select>
           </div>
           <div className="auth-label dob-c2">
             <label>Day</label>
-            <select>
+            <select
+              value={day}
+              onChange={(e) => setDay(e.target.value)}
+              id="signup-day"
+            >
               <option></option>
               {pDays()}
             </select>
           </div>
           <div className="auth-label dob-c3">
             <label>Year</label>
-            <select>
+            <select
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              id="signup-year"
+            >
               <option></option>
               {pYears().reverse()}
             </select>
