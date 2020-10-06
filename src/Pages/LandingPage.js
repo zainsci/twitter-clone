@@ -1,8 +1,8 @@
 import "../App.css";
 import React from "react";
-import Login from "./Login";
 import SignUp from "./Signup";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "./Login";
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -20,6 +20,9 @@ class LandingPage extends React.Component {
     return (
       <Router>
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/">
             {this.state.isSignupWin ? <SignUp></SignUp> : null}
             <Route path="/signup">
@@ -35,7 +38,9 @@ class LandingPage extends React.Component {
                   >
                     Sign Up
                   </a>
-                  <Link to="/login">Log In</Link>
+                  <Link to="/login" className="btn btn-login">
+                    Log In
+                  </Link>
                 </div>
                 <div className="left-half">
                   <div className="twitter-svg">
@@ -117,9 +122,6 @@ class LandingPage extends React.Component {
                 </div>
               </div>
             </div>
-          </Route>
-          <Route path="/login">
-            <Login />
           </Route>
         </Switch>
       </Router>
