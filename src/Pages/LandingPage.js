@@ -11,10 +11,8 @@ class LandingPage extends React.Component {
       isSignupWin: false,
       isLoginWin: false,
     };
-    this.showLoginWin = this.showLoginWin.bind(this);
-    this.showSignupWin = this.showSignupWin.bind(this);
   }
-  showLoginWin(e) {
+  showLoginWin = (e) => {
     e.preventDefault();
     this.setState({
       isLandingPage: false,
@@ -22,7 +20,7 @@ class LandingPage extends React.Component {
       isSignupWin: false,
     });
   }
-  showSignupWin(e) {
+  showSignupWin = (e) => {
     e.preventDefault();
     this.setState({
       isLandingPage: true,
