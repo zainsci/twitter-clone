@@ -26,6 +26,19 @@ class Login extends React.Component {
       window.location.protocol + "//" + window.location.host + "/signup"
     );
   };
+  formValid = () => {
+    let username = document.getElementById("login-username").value;
+    let password = document.getElementById("login-password").value;
+    if (username.length > 4 && password.length > 8) {
+      this.setState({
+        isFormValid: true,
+      });
+    } else {
+      this.setState({
+        isFormValid: false,
+      });
+    }
+  };
   render() {
     return (
       <Router>
@@ -55,7 +68,11 @@ class Login extends React.Component {
                   </div>
                   <div className="auth-label">
                     <label htmlFor="login-password">Password</label>
-                    <input type="password" id="login-password" />
+                    <input
+                      type="password"
+                      id="login-password"
+                      onChange={this.formValid}
+                    />
                   </div>
                   <button
                     type="submit"
