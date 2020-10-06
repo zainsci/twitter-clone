@@ -14,6 +14,14 @@ class LandingPage extends React.Component {
     this.setState({
       isSignupWin: !this.state.isSignupWin,
     });
+    window.history.pushState(
+      {
+        path:
+          window.location.protocol + "//" + window.location.host + "/signup",
+      },
+      "",
+      window.location.protocol + "//" + window.location.host + "/signup"
+    );
   };
 
   render() {
