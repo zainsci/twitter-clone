@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import Explore from "./Explore";
 
 class Base extends React.Component {
   constructor(props) {
@@ -105,6 +106,15 @@ class Base extends React.Component {
                   </svg>
                 </div>
               </header>
+            </div>
+            <div className="feed__body">
+              <Router>
+                <Switch>
+                  <Route path="/explore">
+                    <Explore />
+                  </Route>
+                </Switch>
+              </Router>
             </div>
           </div>
           <div className="base__sidebar"></div>
