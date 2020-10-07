@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import Tweet from "../Components/Tweet";
 
 class Explore extends React.Component {
   constructor(props) {
@@ -7,17 +8,20 @@ class Explore extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div>
-          <h1>Hello From Twitter 01</h1>
+      <div className="explore">
+        <div className="explore__header">
+          <h3>Trends For You</h3>
         </div>
-        <div>
-          <h1>Hello From Twitter 02</h1>
-        </div>
-        <div>
-          <h1>Hello From Twitter 03</h1>
+        <div className="explore__cards">
+          <Tweet />
+          <Tweet />
+          <Tweet />
+          <Tweet />
+          <Tweet />
         </div>
       </div>
     );
   }
 }
+
+export default Explore;
