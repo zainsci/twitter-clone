@@ -484,6 +484,43 @@ a:hover {
   flex-shrink: 0;
 }
 
+/* ******************* Tweet ******************* */
+.tweet__card {
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card__header {
+  min-width: 50px;
+  margin: 10px;
+}
+.card__body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card__body__meta {
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+}
+.cbm__name {
+  font-weight: 600;
+  margin-right: 10px;
+}
+.cbm__username {
+  font-weight: 300;
+  margin-right: 10px;
+}
+.cbm__time {
+  font-weight: 300;
+}
 /* ******************* Media Queries ******************* */
 @media (max-width: 800px) {
   .public-home {
