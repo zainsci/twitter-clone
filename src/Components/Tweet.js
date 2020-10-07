@@ -7,7 +7,7 @@ class Tweet extends React.Component {
   render() {
     return (
       <div>
-        <div className="card">
+        <div className="tweet__card">
           <div className="card__header">
             <img src="#"></img>
           </div>
@@ -29,3 +29,4 @@ class Tweet extends React.Component {
     );
   }
 }
+export default Tweet;
