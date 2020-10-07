@@ -10,12 +10,12 @@ class Base extends React.Component {
   render() {
     return (
       <div>
-        <div className="base">
+        <div className="base" id="Base">
           <div className="base__nav">
             <header>
               <div className="logo">
                 <svg
-                  fill="#1A91DA"
+                  fill="#1DA1F2"
                   viewBox="0 0 24 24"
                   width="30px"
                   height="30px"
@@ -26,9 +26,12 @@ class Base extends React.Component {
                 </svg>
               </div>
               <nav className="navbar">
-                <ul>
+                <ul className="navbar__list">
                   <li className="navitem btn btn-secondary">
-                    <Link to="/explore" className="navitem__link">
+                    <Link
+                      to="/explore"
+                      className="navitem__link navitem__link--active"
+                    >
                       <span className="navitem__icon">
                         <svg
                           viewBox="0 0 24 24"
