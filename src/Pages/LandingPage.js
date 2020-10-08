@@ -46,7 +46,7 @@ class LandingPage extends React.Component {
                   >
                     Sign Up
                   </a>
-                  <Link to="/login" className="btn btn-secondary">
+                  <Link to="/login" className="btn btn-secondary btn-border ">
                     Log In
                   </Link>
                 </div>
@@ -123,7 +123,7 @@ class LandingPage extends React.Component {
                     >
                       Sign Up
                     </a>
-                    <Link to="/login" className="btn btn-secondary">
+                    <Link to="/login" className="btn btn-secondary btn-border ">
                       Log in
                     </Link>
                   </div>
