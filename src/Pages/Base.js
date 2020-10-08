@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Explore from "./Explore";
+import Trends from "../Components/Trends";
 
 class Base extends React.Component {
   constructor(props) {
@@ -120,7 +121,11 @@ class Base extends React.Component {
               </Router>
             </div>
           </div>
-          <div className="base__sidebar"></div>
+          <div className="base__sidebar">
+            <div>
+              <Trends />
+            </div>
+          </div>
         </div>
       </div>
     );
