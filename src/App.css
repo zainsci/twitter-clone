@@ -44,7 +44,6 @@
   background-color: var(--hover-dark);
 }
 .btn-secondary {
-  border: 1px solid;
   background-color: transparent;
   color: var(--primary);
   border-color: var(--primary);
@@ -58,6 +57,9 @@
 }
 .btn-link:hover {
   background-color: var(--background-light);
+}
+.btn-border {
+  border: 1px solid;
 }
 .disabled {
   pointer-events: none;
@@ -83,9 +85,6 @@
 a {
   text-decoration: none;
   color: var(--primary-link);
-}
-a:hover {
-  text-decoration: underline;
 }
 
 /*  ********************* Styling for Public Home *********************  */
@@ -483,10 +482,21 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transition: 0.35s;
+  border-bottom: 1px solid var(--border-secondary);
+}
+.tweet__card:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 .card__header {
   min-width: 50px;
   margin: 10px;
+}
+.card__header__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .card__body {
   width: 100%;
@@ -495,14 +505,15 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  color: var(--text);
 }
 .card__body__meta {
   width: 100%;
-  padding: 10px 0;
+  padding-top: 10px;
   overflow: hidden;
 }
 .cbm__name {
-  font-weight: 600;
+  font-weight: 800;
   margin-right: 10px;
 }
 .cbm__username {
@@ -511,6 +522,42 @@ a:hover {
 }
 .cbm__time {
   font-weight: 300;
+}
+.card__body__feedback {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--border-primary);
+}
+.card__body__feedback svg {
+  fill: currentColor;
+}
+.cbf__comment,
+.cbf__retweet,
+.cbf__like,
+.cbf__send {
+  padding: 10px;
+  border-radius: 999px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 0 !important;
+}
+.cbf__comment:hover,
+.cbf__send:hover {
+  background-color: var(--hover-primary);
+  color: var(--primary);
+}
+.cbf__like:hover {
+  background-color: rgba(224, 36, 94, 0.1);
+  color: rgb(224, 36, 94);
+}
+.cbf__retweet:hover {
+  background-color: rgba(23, 191, 99, 0.1);
+  color: rgb(23, 191, 99) !important;
 }
 /* ******************* Media Queries ******************* */
 @media (max-width: 800px) {
