@@ -13,11 +13,11 @@ class Explore extends React.Component {
           <h3>Trends For You</h3>
         </div>
         <div className="explore__cards">
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
+          <Tweet postId="1" />
+          <Tweet postId="2" />
+          <Tweet postId="3" />
+          <Tweet postId="4" />
+          <Tweet postId="5" />
         </div>
       </div>
     );
