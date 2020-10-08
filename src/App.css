@@ -29,6 +29,7 @@
   cursor: pointer;
   font-size: 15px;
   transition: 0.4s;
+  text-decoration: none !important;
 }
 .btn:focus {
   outline: none;
@@ -43,6 +44,7 @@
   background-color: var(--hover-dark);
 }
 .btn-secondary {
+  border: 1px solid;
   background-color: transparent;
   color: var(--primary);
   border-color: var(--primary);
@@ -60,17 +62,6 @@
 .disabled {
   pointer-events: none;
   opacity: 0.5;
-}
-.btn-signup {
-  color: white;
-  background-color: var(--primary) !important;
-}
-
-.btn-login:hover {
-  background-color: var(--hover-primary);
-}
-.btn-signup:hover {
-  background-color: var(--hover-dark) !important;
 }
 
 .btn-form {

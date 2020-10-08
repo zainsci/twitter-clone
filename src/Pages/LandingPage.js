@@ -42,11 +42,11 @@ class LandingPage extends React.Component {
                   <a
                     href="/signup"
                     onClick={this.showSignupWin}
-                    className="btn btn-signup"
+                    className="btn btn-primary"
                   >
                     Sign Up
                   </a>
-                  <Link to="/login" className="btn btn-login">
+                  <Link to="/login" className="btn btn-secondary">
                     Log In
                   </Link>
                 </div>
@@ -119,11 +119,11 @@ class LandingPage extends React.Component {
                     <a
                       href="/signup"
                       onClick={this.showSignupWin}
-                      className="btn btn-signup"
+                      className="btn btn-primary"
                     >
                       Sign Up
                     </a>
-                    <Link to="/login" className="btn btn-login">
+                    <Link to="/login" className="btn btn-secondary">
                       Log in
                     </Link>
                   </div>
