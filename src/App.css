@@ -363,9 +363,12 @@ a {
   color: var(--primary) !important;
 }
 .navitem__link--active svg {
-  fill: var(--primary) !important;
+  color: var(--primary) !important;
 }
 
+.navitem__link svg {
+  fill: currentColor;
+}
 .navitem__link {
   display: flex;
   justify-content: flex-start;
@@ -375,13 +378,6 @@ a {
 }
 .navitem__link:hover {
   color: var(--primary) !important;
-}
-
-.navitem__link svg {
-  fill: var(--text);
-}
-.navitem__link:hover svg {
-  fill: var(--primary) !important;
 }
 .navitem__text {
   font-size: 19px;
