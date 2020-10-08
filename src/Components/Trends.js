@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Trends extends React.Component {
   constructor(props) {
@@ -99,3 +100,5 @@ class Trends extends React.Component {
     );
   }
 }
+
+export default Trends;
