@@ -499,7 +499,6 @@ a {
   overflow: hidden;
 }
 .card__body {
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -508,7 +507,6 @@ a {
   color: var(--text);
 }
 .card__body__meta {
-  width: 100%;
   padding-top: 10px;
   overflow: hidden;
 }
@@ -522,6 +520,19 @@ a {
 }
 .cbm__time {
   font-weight: 300;
+}
+.card__body__content img {
+  width: 100%;
+  height: auto;
+}
+.cbc__img {
+  height: 280px;
+  border-radius: 10px;
+  border: 1px solid var(--border-secondary);
+  overflow: hidden;
+  flex-grow: 0;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 .card__body__feedback {
   width: 80%;

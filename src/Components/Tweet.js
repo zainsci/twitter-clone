@@ -30,6 +30,11 @@ class Tweet extends React.Component {
                     It is the mark of an educated mind to be able to entertain a
                     thought without accepting it.
                   </p>
+                  <Link to="">
+                    <div className="cbc__img">
+                      <img src="https://picsum.photos/600" />
+                    </div>
+                  </Link>
                 </div>
                 <div className="card__body__feedback">
                   <div className="cbf__comment btn">
