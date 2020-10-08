@@ -14,12 +14,12 @@ class Trends extends React.Component {
         <div className={this.state.isSidebar ? "trends br-10" : "trends"}>
           <div className="trends__header">
             <h3>Trends for you</h3>
-            <div className="btn btn-secondary navitem__icon">
+            <div className="btn btn-secondary trends__icon">
               <svg
                 viewBox="0 0 24 24"
                 fill="#1A91DA"
-                width="26px"
-                height="26px"
+                width="18px"
+                height="18px"
               >
                 <g>
                   <path d="M12 8.21c-2.09 0-3.79 1.7-3.79 3.79s1.7 3.79 3.79 3.79 3.79-1.7 3.79-3.79-1.7-3.79-3.79-3.79zm0 6.08c-1.262 0-2.29-1.026-2.29-2.29S10.74 9.71 12 9.71s2.29 1.026 2.29 2.29-1.028 2.29-2.29 2.29z"></path>
@@ -29,9 +29,9 @@ class Trends extends React.Component {
             </div>
           </div>
           <div className="trends__body">
-            <ul>
+            <ul className="trends__list">
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -40,7 +40,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -49,7 +49,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -58,7 +58,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -67,7 +67,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -76,7 +76,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
@@ -85,7 +85,7 @@ class Trends extends React.Component {
                 </li>
               </Link>
               <Link>
-                <li>
+                <li className="trends__list__item">
                   <div className="trend__category">Politics • Trending</div>
                   <div className="trend__name">
                     <h3>Trending</h3>
