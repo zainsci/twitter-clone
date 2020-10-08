@@ -28,10 +28,10 @@ class Base extends React.Component {
               </div>
               <nav className="navbar">
                 <ul className="navbar__list">
-                  <li className="navitem btn btn-secondary">
+                  <li className="navitem">
                     <Link
                       to="/explore"
-                      className="navitem__link navitem__link--active"
+                      className="navitem__link btn btn-secondary navitem__link--active"
                     >
                       <span className="navitem__icon">
                         <svg
@@ -48,8 +48,11 @@ class Base extends React.Component {
                       <span className="navitem__text">Explore</span>
                     </Link>
                   </li>
-                  <li className="navitem  btn btn-secondary">
-                    <Link to="/settings" className="navitem__link">
+                  <li className="navitem">
+                    <Link
+                      to="/settings"
+                      className="navitem__link btn btn-secondary"
+                    >
                       <span className="navitem__icon">
                         <svg
                           viewBox="0 0 24 24"
