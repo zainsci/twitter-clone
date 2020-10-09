@@ -620,6 +620,9 @@ a {
   font-size: 16px;
   padding: 5px 0;
 }
+.trend {
+  width: 100% !important;
+}
 /* ******************* Media Queries ******************* */
 @media (max-width: 1100px) {
   .base__nav {

@@ -10,7 +10,7 @@ class Trend extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="trend">
           <Tweet userId="1" />
           <Tweet userId="2" />
           <Tweet userId="3" />
