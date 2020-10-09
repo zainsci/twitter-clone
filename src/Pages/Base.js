@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Explore from "./Explore";
 import Trends from "../Components/Trends";
+import Trend from "./Trend";
 
 class Base extends React.Component {
   constructor(props) {
@@ -117,6 +118,9 @@ class Base extends React.Component {
                   <Route path="/explore">
                     <Trends isExploreSection={true} />
                     <Explore />
+                    <Route path="/search?q=:trend">
+                      <Trend trendName="trend" />
+                    </Route>
                   </Route>
                 </Switch>
               </Router>
