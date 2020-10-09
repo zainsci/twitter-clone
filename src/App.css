@@ -623,21 +623,35 @@ a {
 /* ******************* Media Queries ******************* */
 @media (max-width: 1100px) {
   .base__nav {
-    width: 88px;
+    min-width: 88px;
     justify-content: flex-end;
   }
   .base__nav header {
+    min-width: 88px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     padding: 10px;
   }
+  .base__nav header a {
+    width: fit-content;
+  }
   .navitem__text {
     display: none;
   }
   .base__nav .navbar {
+    width: fit-content;
     padding: 0;
+  }
+  .base__sidebar {
+    width: 100%;
+    flex-shrink: 1;
+  }
+}
+@media (max-width: 900px) {
+  .base__sidebar * {
+    display: none;
   }
 }
 @media (max-width: 800px) {
@@ -675,7 +689,11 @@ a {
     margin-right: 15px;
   }
 }
-
+@media (max-width: 700px) {
+  .base__sidebar {
+    display: none;
+  }
+}
 @media (max-width: 600px) {
   .signup-popup {
     max-width: 100%;
