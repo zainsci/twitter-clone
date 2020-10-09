@@ -123,7 +123,7 @@ class Base extends React.Component {
           </div>
           <div className="base__sidebar">
             <div>
-              <Trends />
+              <Trends isSidebar={true} />
             </div>
           </div>
         </div>

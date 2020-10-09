@@ -5,13 +5,16 @@ class Trends extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSidebar: true,
+      isSidebar: this.props.isSidebar,
     };
   }
   render() {
     return (
       <div>
-        <div className="trends">
+        <div
+          className="trends"
+          style={this.state.isSidebar ? { borderRadius: "10px" } : null}
+        >
           <div className="trends__header">
             <h3>Trends for you</h3>
             <div className="btn btn-secondary trends__icon">
