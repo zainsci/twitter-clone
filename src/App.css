@@ -648,6 +648,9 @@ a {
     width: 100%;
     flex-shrink: 1;
   }
+  .explore-sec {
+    width: 100% !important;
+  }
 }
 @media (max-width: 900px) {
   .base__sidebar * {

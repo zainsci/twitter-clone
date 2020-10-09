@@ -115,6 +115,7 @@ class Base extends React.Component {
               <Router>
                 <Switch>
                   <Route path="/explore">
+                    <Trends isExploreSection={true} />
                     <Explore />
                   </Route>
                 </Switch>
