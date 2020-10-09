@@ -10,7 +10,7 @@ class Explore extends React.Component {
     return (
       <div className="explore">
         <div className="explore__header">
-          <h3>Trends For You</h3>
+          <h3>What's Happening</h3>
         </div>
         <div className="explore__cards">
           <Tweet postId="1" />
