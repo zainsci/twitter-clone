@@ -11,7 +11,7 @@ class Trends extends React.Component {
   render() {
     return (
       <div>
-        <div className={this.state.isSidebar ? "trends br-10" : "trends"}>
+        <div className="trends">
           <div className="trends__header">
             <h3>Trends for you</h3>
             <div className="btn btn-secondary trends__icon">
