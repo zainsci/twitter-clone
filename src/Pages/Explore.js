@@ -5,8 +5,18 @@ import Tweet from "../Components/Tweet";
 class Explore extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      tweetData: [],
+      dataLoaded: false,
+    };
+  }
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?results=10")
+      .then((res) => res.json())
+      .then((data) => this.setState({ tweetData: data, dataLoaded: true }));
   }
   render() {
+    let tweetData = this.state.tweetData.results;
     return (
       <Router>
         <div className="explore">
@@ -14,11 +24,11 @@ class Explore extends React.Component {
             <h3>What's Happening</h3>
           </div>
           <div className="explore__cards">
-            <Tweet postId="1" />
-            <Tweet postId="2" />
-            <Tweet postId="3" />
-            <Tweet postId="4" />
-            <Tweet postId="5" />
+            {this.state.dataLoaded
+              ? tweetData.map((tweet) => (
+                  <Tweet tweetData={tweet} key={tweet.id.value} />
+                ))
+              : null}
           </div>
         </div>
       </Router>
