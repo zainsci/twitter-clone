@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import Tweet from "../Components/Tweet";
-import Thread from "../Components/Thread";
 
 class Explore extends React.Component {
   constructor(props) {
@@ -29,8 +28,9 @@ class Explore extends React.Component {
               ? tweetData.map((tweet) => (
                   <Link
                     to={`/${tweet.login.username}/status/${tweet.login.salt}`}
+                    key={tweet.login.uuid}
                   >
-                    <Tweet tweetData={tweet} key={tweet.id.value} />
+                    <Tweet tweetData={tweet} />
                   </Link>
                 ))
               : null}

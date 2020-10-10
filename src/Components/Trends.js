@@ -29,7 +29,7 @@ class Trends extends React.Component {
         </div>
         <div className="trends__body">
           <ul className="trends__list">
-            <Link>
+            <Link to="/trends/01">
               <li className="trends__list__item">
                 <div className="trend__category">Politics • Trending</div>
                 <div className="trend__name">
@@ -38,7 +38,7 @@ class Trends extends React.Component {
                 <div className="trend__tweets">100k Tweets</div>
               </li>
             </Link>
-            <Link>
+            <Link to="/trends/01">
               <li className="trends__list__item">
                 <div className="trend__category">Politics • Trending</div>
                 <div className="trend__name">
@@ -47,7 +47,7 @@ class Trends extends React.Component {
                 <div className="trend__tweets">100k Tweets</div>
               </li>
             </Link>
-            <Link>
+            <Link to="/trends/01">
               <li className="trends__list__item">
                 <div className="trend__category">Politics • Trending</div>
                 <div className="trend__name">
@@ -56,7 +56,7 @@ class Trends extends React.Component {
                 <div className="trend__tweets">100k Tweets</div>
               </li>
             </Link>
-            <Link>
+            <Link to="/trends/01">
               <li className="trends__list__item">
                 <div className="trend__category">Politics • Trending</div>
                 <div className="trend__name">
@@ -65,25 +65,7 @@ class Trends extends React.Component {
                 <div className="trend__tweets">100k Tweets</div>
               </li>
             </Link>
-            <Link>
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link>
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link>
+            <Link to="/trends/01">
               <li className="trends__list__item">
                 <div className="trend__category">Politics • Trending</div>
                 <div className="trend__name">

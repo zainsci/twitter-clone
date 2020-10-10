@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 class Tweet extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Tweet extends React.Component {
         <div className="tweet__card">
           <div className="card__header">
             <div className="card__header__img">
-              <img src={data.picture.medium}></img>
+              <img src={data.picture.medium} alt={data.login.username}></img>
             </div>
           </div>
           <div className="card__body">
@@ -31,11 +31,12 @@ class Tweet extends React.Component {
                 It is the mark of an educated mind to be able to entertain a
                 thought without accepting it.
               </p>
-              <Link to="">
-                <div className="cbc__img">
-                  <img src="https://picsum.photos/600" />
-                </div>
-              </Link>
+              <div className="cbc__img">
+                <img
+                  src="https://picsum.photos/600"
+                  alt={data.login.username}
+                />
+              </div>
             </div>
             <div className="card__body__feedback">
               <div className="cbf__comment btn">

@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Tweet from "./Tweet";
 
 class Thread extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   render() {
     return (
@@ -18,3 +19,4 @@ class Thread extends React.Component {
     );
   }
 }
+export default Thread;
