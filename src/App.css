@@ -38,7 +38,7 @@
 .btn-primary {
   background-color: var(--primary);
   color: white;
-  border-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 .btn-primary:hover {
   background-color: var(--hover-dark);

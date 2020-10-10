@@ -78,8 +78,8 @@ class Login extends React.Component {
                     type="submit"
                     className={
                       this.state.isFormValid
-                        ? "btn btn-form"
-                        : "btn btn-form disabled"
+                        ? "btn btn-primary"
+                        : "btn btn-primary disabled"
                     }
                   >
                     log in
