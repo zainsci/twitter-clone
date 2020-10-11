@@ -9,23 +9,8 @@ class Login extends React.Component {
     super(props);
     this.state = {
       isFormValid: false,
-      isSignupWin: false,
     };
   }
-  showSignupWin = (e) => {
-    e.preventDefault();
-    this.setState({
-      isSignupWin: !this.state.isSignupWin,
-    });
-    window.history.pushState(
-      {
-        path:
-          window.location.protocol + "//" + window.location.host + "/signup",
-      },
-      "",
-      window.location.protocol + "//" + window.location.host + "/signup"
-    );
-  };
   formValid = () => {
     let username = document.getElementById("login-username").value;
     let password = document.getElementById("login-password").value;
@@ -44,7 +29,6 @@ class Login extends React.Component {
       <Router>
         <Switch>
           <Route path="/login">
-            {this.state.isSignupWin ? <Signup /> : null}
             <div className="auth-page">
               <svg
                 viewBox="0 0 24 24"
@@ -87,16 +71,16 @@ class Login extends React.Component {
                 </form>
                 <div>
                   <Link to="/forget-password">Forgot password?</Link> ·
-                  <a href="/signup" onClick={this.showSignupWin}>
-                    {" "}
-                    Sign up for Twitter
-                  </a>
+                  <Link to="/signup"> Sign up for Twitter</Link>
                 </div>
               </div>
             </div>
           </Route>
           <Route path="/forget-password">
             <ForgetPassword />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </Router>
