@@ -8,23 +8,74 @@ class SignUp extends React.Component {
       isStep02: false,
       isStep03: false,
       formValid: false,
-      signupData: {},
+      formData: {
+        name: "",
+        phone: "",
+        month: "",
+        year: "",
+        day: "",
+      },
     };
   }
-
-  getData = (data) => {
-    this.setState({ signupData: data });
-    if (
-      data.name !== "" &&
-      data.phone !== "" &&
-      data.phone.length > 11 &&
-      data.month !== "" &&
-      data.day !== "" &&
-      data.year !== ""
-    ) {
-      this.setState({ formValid: true });
+  updateFormData = (e, state) => {
+    if (state === "name") {
+      this.setState({
+        formData: {
+          ...this.state.formData,
+          name: e.target.value,
+        },
+      });
+      this.validate();
+    } else if (state === "phone") {
+      this.setState({
+        formData: {
+          ...this.state.formData,
+          phone: e.target.value,
+        },
+      });
+      this.validate();
+    } else if (state === "year") {
+      this.setState({
+        formData: {
+          ...this.state.formData,
+          year: e.target.value,
+        },
+      });
+      this.validate();
+    } else if (state === "month") {
+      this.setState({
+        formData: {
+          ...this.state.formData,
+          month: e.target.value,
+        },
+      });
+      this.validate();
+    } else if (state === "day") {
+      this.setState({
+        formData: {
+          ...this.state.formData,
+          day: e.target.value,
+        },
+      });
+      this.validate();
     }
   };
+
+  validate = () => {
+    if (
+      this.state.formData.name !== "" &&
+      this.state.formData.phone !== "" &&
+      this.state.formData.phone.length > 11 &&
+      this.state.formData.month !== "" &&
+      this.state.formData.day !== "" &&
+      this.state.formData.year !== ""
+    ) {
+      this.setState({ formValid: true });
+    } else {
+      this.setState({ formValid: false });
+    }
+  };
+
   showNextStep = () => {
     if (this.state.isStep01) {
       this.setState({ isStep01: false });
@@ -40,11 +91,16 @@ class SignUp extends React.Component {
   render() {
     let step;
     if (this.state.isStep01 === true) {
-      step = <Step01 signupData={this.getData} />;
+      step = (
+        <Step01
+          formData={this.state.formData}
+          updateFormData={this.updateFormData}
+        />
+      );
     } else if (this.state.isStep02 === true) {
       step = <Step02 />;
     } else if (this.state.isStep03 === true) {
-      step = <Step03 signupData={this.state.signupData} />;
+      step = <Step03 formData={this.state.formData} />;
     } else {
       step = <h1>Someting Went Wrong.</h1>;
     }
@@ -90,38 +146,16 @@ class Step01 extends React.Component {
     super(props);
     this.state = {
       useEmail: false,
-      name: "",
-      phone: "",
-      day: "",
-      month: "",
-      year: "",
     };
   }
 
-  sendData = () => {
-    let data = {};
-    this.setState({ name: document.getElementById("signup-name").value });
-    this.setState({ phone: document.getElementById("signup-phone").value });
-    this.setState({ day: document.getElementById("signup-day").value });
-    this.setState({ year: document.getElementById("signup-year").value });
-    this.setState({ month: document.getElementById("signup-month").value });
-    data.name = document.getElementById("signup-name").value;
-    data.phone = document.getElementById("signup-phone").value;
-    data.month = document.getElementById("signup-month").value;
-    data.day = document.getElementById("signup-day").value;
-    data.year = document.getElementById("signup-year").value;
-    this.props.signupData(data);
-  };
-
-  countWords(e) {
-    this.setState({ name: e.target.value });
-  }
   changeInput(e) {
     e.preventDefault();
     !this.state.useEmail
       ? this.setState({ useEmail: true })
       : this.setState({ useEmail: false });
   }
+
   render() {
     return (
       <div className="form-container">
@@ -133,11 +167,13 @@ class Step01 extends React.Component {
               type="text"
               id="signup-name"
               maxLength="50"
-              value={this.state.name}
-              onChange={this.sendData}
+              value={this.props.formData.name}
+              onChange={(e) => this.props.updateFormData(e, "name")}
             />
           </div>
-          <div className="word-counter">{this.state.name.length}/50</div>
+          <div className="word-counter">
+            {this.props.formData.name.length}/50
+          </div>
           <div className="auth-label">
             <label htmlFor="signup-phone">
               {this.state.useEmail ? "Email" : "Phone"}
@@ -145,8 +181,8 @@ class Step01 extends React.Component {
             <input
               type={this.state.useEmail ? "email" : "text"}
               id="signup-phone"
-              value={this.state.phone}
-              onChange={this.sendData}
+              value={this.props.formData.phone}
+              onChange={(e) => this.props.updateFormData(e, "phone")}
             />
           </div>
           <a href="/change-to-email" onClick={this.changeInput}>
@@ -163,8 +199,8 @@ class Step01 extends React.Component {
             <div className="auth-label dob-c1">
               <label htmlFor="signup-month">Month</label>
               <select
-                value={this.state.month}
-                onChange={this.sendData}
+                value={this.props.formData.month}
+                onChange={(e) => this.props.updateFormData(e, "month")}
                 id="signup-month"
               >
                 <option></option>
@@ -174,8 +210,8 @@ class Step01 extends React.Component {
             <div className="auth-label dob-c2">
               <label htmlFor="signup-day">Day</label>
               <select
-                value={this.state.day}
-                onChange={this.sendData}
+                value={this.props.formData.day}
+                onChange={(e) => this.props.updateFormData(e, "day")}
                 id="signup-day"
               >
                 <option></option>
@@ -185,8 +221,8 @@ class Step01 extends React.Component {
             <div className="auth-label dob-c3">
               <label htmlFor="signup-year">Year</label>
               <select
-                value={this.state.year}
-                onChange={this.sendData}
+                value={this.props.formData.year}
+                onChange={(e) => this.props.updateFormData(e, "year")}
                 id="signup-year"
               >
                 <option></option>
@@ -239,7 +275,7 @@ function Step03(props) {
           <input
             type="text"
             id="signup-name"
-            value={props.signupData.name}
+            value={props.formData.name}
             readOnly={true}
           />
         </div>
@@ -247,7 +283,7 @@ function Step03(props) {
           <input
             type="text"
             id="signup-phone"
-            value={props.signupData.phone}
+            value={props.formData.phone}
             readOnly={true}
           />
         </div>
@@ -256,7 +292,7 @@ function Step03(props) {
             type="text"
             id="signup-dob"
             readOnly={true}
-            value={`${props.signupData.month} ${props.signupData.day}, ${props.signupData.year}`}
+            value={`${props.formData.month} ${props.formData.day}, ${props.formData.year}`}
           />
         </div>
         <div className="tos-text">
