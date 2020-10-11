@@ -149,12 +149,12 @@ class Step01 extends React.Component {
     };
   }
 
-  changeInput(e) {
+  changeInput = (e) => {
     e.preventDefault();
     !this.state.useEmail
       ? this.setState({ useEmail: true })
       : this.setState({ useEmail: false });
-  }
+  };
 
   render() {
     return (
