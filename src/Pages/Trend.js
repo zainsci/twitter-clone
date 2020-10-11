@@ -1,24 +1,36 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Tweet from "../Components/Tweet";
 
 class Trend extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      tweetData: [],
+      dataLoaded: false,
+    };
+  }
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?results=10")
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({ tweetData: data.results, dataLoaded: true })
+      );
   }
   render() {
     return (
-      <Router>
-        <div className="trend">
-          <Tweet userId="1" />
-          <Tweet userId="2" />
-          <Tweet userId="3" />
-          <Tweet userId="4" />
-          <Tweet userId="5" />
-          <Tweet userId="6" />
-        </div>
-      </Router>
+      <div className="trend">
+        {this.state.dataLoaded
+          ? this.state.tweetData.map((tweet) => (
+              <Link
+                to={`/${tweet.login.username}/status/${tweet.login.salt}`}
+                key={tweet.login.uuid}
+              >
+                <Tweet tweetData={tweet} />
+              </Link>
+            ))
+          : null}
+      </div>
     );
   }
 }
