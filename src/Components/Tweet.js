@@ -31,7 +31,10 @@ class Tweet extends React.Component {
                 It is the mark of an educated mind to be able to entertain a
                 thought without accepting it.
               </p>
-              <div className="cbc__img">
+              <div
+                className="cbc__img"
+                style={this.props.isThread ? { height: "fit-content" } : null}
+              >
                 <img
                   src="https://picsum.photos/600"
                   alt={data.login.username}
