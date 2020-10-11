@@ -29,6 +29,12 @@ class App extends React.Component {
             <Route path="/signup">
               <SignUp />
             </Route>
+            <Route path="/trends/:trend">
+              <Base />
+            </Route>
+            <Route path="/:user/status/:id">
+              <Base />
+            </Route>
           </Switch>
         </Router>
       </div>
