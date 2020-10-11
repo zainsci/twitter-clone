@@ -5,6 +5,7 @@ import "./CSS/Helper.css";
 import LandingPage from "./Pages/LandingPage";
 import Login from "./Pages/Login";
 import Base from "./Pages/Base";
+import SignUp from "./Pages/Signup";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <Switch>
+            <Route path="/" exact>
+              <LandingPage />
+            </Route>
             <Route path="/explore">
               <Base />
             </Route>
@@ -23,10 +27,7 @@ class App extends React.Component {
               <Login />
             </Route>
             <Route path="/signup">
-              <LandingPage signupWin={true}></LandingPage>
-            </Route>
-            <Route path="/">
-              <LandingPage />
+              <SignUp />
             </Route>
           </Switch>
         </Router>
