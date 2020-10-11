@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import Explore from "./Explore";
 import Trends from "../Components/Trends";
 import Trend from "./Trend";
+import Thread from "../Components/Thread";
 
 class Base extends React.Component {
   constructor(props) {
@@ -113,17 +114,18 @@ class Base extends React.Component {
               </header>
             </div>
             <div className="feed__body">
-              <Router>
-                <Switch>
-                  <Route path="/explore">
-                    <Trends isExploreSection={true} />
-                    <Explore />
-                    <Route path="/search?q=:trend">
-                      <Trend trendName="trend" />
-                    </Route>
-                  </Route>
-                </Switch>
-              </Router>
+              <Switch>
+                <Route path="/explore">
+                  <Trends isExploreSection={true} />
+                  <Explore />
+                </Route>
+                <Route path="/trends/:trend">
+                  <Trend />
+                </Route>
+                <Route path="/:user/status/:id">
+                  <Thread />
+                </Route>
+              </Switch>
             </div>
           </div>
           <div className="base__sidebar">
