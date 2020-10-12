@@ -4,6 +4,7 @@ import Explore from "./Explore";
 import Trends from "../Components/Trends";
 import Trend from "./Trend";
 import Thread from "../Components/Thread";
+import User from "./User";
 
 class Base extends React.Component {
   constructor(props) {
@@ -125,13 +126,14 @@ class Base extends React.Component {
                 <Route path="/:user/status/:id">
                   <Thread />
                 </Route>
+                <Route path="/:username">
+                  <User />
+                </Route>
               </Switch>
             </div>
           </div>
           <div className="base__sidebar">
-            <div>
-              <Trends isSidebar={true} />
-            </div>
+            <Trends isSidebar={true} />
           </div>
         </div>
       </div>
