@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "./CSS/Helper.css";
 import LandingPage from "./Pages/LandingPage";
-import Login from "./Pages/Login";
 import Base from "./Pages/Base";
-import SignUp from "./Pages/Signup";
+import Login from "./Components/Login";
+import SignUp from "./Components/Signup";
 
 class App extends React.Component {
   constructor(props) {
