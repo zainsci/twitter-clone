@@ -6,6 +6,7 @@ import LandingPage from "./Pages/LandingPage";
 import Base from "./Pages/Base";
 import Login from "./Components/Login";
 import SignUp from "./Components/Signup";
+import User from "./Pages/User";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,9 @@ class App extends React.Component {
               <Base />
             </Route>
             <Route path="/:user/status/:id">
+              <Base />
+            </Route>
+            <Route path="/:username">
               <Base />
             </Route>
           </Switch>
