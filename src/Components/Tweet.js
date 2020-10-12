@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Tweet extends React.Component {
   constructor(props) {
@@ -11,18 +11,22 @@ class Tweet extends React.Component {
   render() {
     let data = this.state.data;
     return (
-      <Router>
+      <>
         <div className="tweet__card">
           <div className="card__header">
-            <div className="card__header__img">
-              <img src={data.picture.medium} alt={data.login.username}></img>
-            </div>
+            <Link to={"/user/" + data.login.username}>
+              <div className="card__header__img">
+                <img src={data.picture.medium} alt={data.login.username}></img>
+              </div>
+            </Link>
           </div>
           <div className="card__body">
             <div className="card__body__meta">
-              <span className="cbm__name">
-                {data.name.first + " " + data.name.last}
-              </span>
+              <Link to={"/user/" + data.login.username}>
+                <span className="cbm__name">
+                  {data.name.first + " " + data.name.last}
+                </span>
+              </Link>
               <span className="cbm__username">@{data.login.username}</span>
               <span className="cbm__time">1 hour ago</span>
             </div>
@@ -94,7 +98,7 @@ class Tweet extends React.Component {
             </div>
           </div>
         </div>
-      </Router>
+      </>
     );
   }
 }
