@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Trend 00",
+        "tag": "Politics",
+        "noOfTweets": "10 K"
+    },
+    {
+        "name": "Trend 01",
+        "tag": "Politics",
+        "noOfTweets": "20 K"
+    },
+    {
+        "name": "Trend 02",
+        "tag": "Politics",
+        "noOfTweets": "30 K"
+    },
+    {
+        "name": "Trend 03",
+        "tag": "Politics",
+        "noOfTweets": "40 K"
+    },
+    {
+        "name": "Trend 04",
+        "tag": "Politics",
+        "noOfTweets": "50 K"
+    },
+    {
+        "name": "Trend 05",
+        "tag": "Politics",
+        "noOfTweets": "60 K"
+    },
+    {
+        "name": "Trend 06",
+        "tag": "Politics",
+        "noOfTweets": "70 K"
+    },
+    {
+        "name": "Trend 07",
+        "tag": "Politics",
+        "noOfTweets": "80 K"
+    },
+    {
+        "name": "Trend 08",
+        "tag": "Politics",
+        "noOfTweets": "90 K"
+    },
+    {
+        "name": "Trend 09",
+        "tag": "Politics",
+        "noOfTweets": "100 K"
+    }
+]
