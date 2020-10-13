@@ -6,7 +6,16 @@ class Trends extends React.Component {
     super(props);
     this.state = {
       isSidebar: this.props.isSidebar,
+      trends: [],
+      isDataLoaded: false,
     };
+  }
+  componentDidMount() {
+    fetch(
+      "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/trends.json"
+    )
+      .then((res) => res.json())
+      .then((data) => this.setState({ trends: data, isDataLoaded: true }));
   }
   render() {
     return (
@@ -29,51 +38,23 @@ class Trends extends React.Component {
         </div>
         <div className="trends__body">
           <ul className="trends__list">
-            <Link to="/trends/01">
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link to="/trends/01">
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link to="/trends/01">
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link to="/trends/01">
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
-            <Link to="/trends/01">
-              <li className="trends__list__item">
-                <div className="trend__category">Politics • Trending</div>
-                <div className="trend__name">
-                  <h3>Trending</h3>
-                </div>
-                <div className="trend__tweets">100k Tweets</div>
-              </li>
-            </Link>
+            {this.state.isDataLoaded
+              ? this.state.trends.map((trend) => (
+                  <Link to="/trends/01">
+                    <li className="trends__list__item">
+                      <div className="trend__category">
+                        {trend.tag} • Trending
+                      </div>
+                      <div className="trend__name">
+                        <h3>{trend.name}</h3>
+                      </div>
+                      <div className="trend__tweets">
+                        {trend.noOfTweets} Tweets
+                      </div>
+                    </li>
+                  </Link>
+                ))
+              : null}
           </ul>
         </div>
       </div>
