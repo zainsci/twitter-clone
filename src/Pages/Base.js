@@ -126,9 +126,9 @@ class Base extends React.Component {
                 <Route path="/:user/status/:id">
                   <Thread />
                 </Route>
-                <Route path="/:username">
+                <Route path="/user/:id">
                   <User />
-                  <Trend />
+                  {/* <Trend /> */}
                 </Route>
               </Switch>
             </div>

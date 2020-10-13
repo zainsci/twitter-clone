@@ -662,8 +662,8 @@ a {
   color: var(--border-primary);
 }
 .profile__img {
-  max-width: min-content;
-  max-height: min-content;
+  max-width: 135px;
+  max-height: 135px;
   border-radius: 100%;
   overflow: hidden;
   position: relative;

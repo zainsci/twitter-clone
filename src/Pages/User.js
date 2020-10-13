@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 class User extends React.Component {
   constructor(props) {
@@ -10,11 +10,13 @@ class User extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://randomuser.me/api")
+    fetch(
+      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/profiles/0.json`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        this.setState({ userData: data.results[0], dataLoaded: true });
+        this.setState({ userData: data, dataLoaded: true });
       });
   }
   render() {
@@ -30,7 +32,7 @@ class User extends React.Component {
               </div>
               <div className="profile__body">
                 <div className="profile__img">
-                  <img src={this.state.userData.picture.large} />
+                  <img src={this.state.userData.profileImg} />
                 </div>
                 <div className="profile__follow">
                   <button className="btn btn-secondary btn-border">
@@ -39,20 +41,13 @@ class User extends React.Component {
                 </div>
                 <div className="profile__meta">
                   <div className="profile__name">
-                    <h3>
-                      {this.state.userData.name.first +
-                        " " +
-                        this.state.userData.name.last}
-                    </h3>
+                    <h3>{this.state.userData.name}</h3>
                   </div>
                   <div className="profile__username">
-                    @{this.state.userData.login.username}
+                    @{this.state.userData.username}
                   </div>
                   <div className="profile__desc mt-10 mb-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    {this.state.userData.description}
                   </div>
                   <div className="profile__detail">
                     <svg
@@ -66,7 +61,7 @@ class User extends React.Component {
                         <path d="M7.27 22.054c-1.61 0-3.197-.735-4.225-2.125-.832-1.127-1.176-2.51-.968-3.894s.943-2.605 2.07-3.438l1.478-1.094c.334-.245.805-.175 1.05.158s.177.804-.157 1.05l-1.48 1.095c-.803.593-1.326 1.464-1.475 2.45-.148.99.097 1.975.69 2.778 1.225 1.657 3.57 2.01 5.23.785l3.528-2.608c1.658-1.225 2.01-3.57.785-5.23-.498-.674-1.187-1.15-1.992-1.376-.4-.113-.633-.527-.52-.927.112-.4.528-.63.926-.522 1.13.318 2.096.986 2.794 1.932 1.717 2.324 1.224 5.612-1.1 7.33l-3.53 2.608c-.933.693-2.023 1.026-3.105 1.026z"></path>
                       </g>
                     </svg>
-                    yourwebsite.something{" "}
+                    {this.state.userData.website}
                     <svg
                       viewBox="0 0 24 24"
                       width="18px"
@@ -85,11 +80,13 @@ class User extends React.Component {
                         <circle cx="12" cy="17.486" r="1.285"></circle>
                       </g>
                     </svg>
-                    Joined Jan 2010
+                    Joined {this.state.userData.joined}
                   </div>
                   <div className="profile__numbers">
-                    <strong>10K</strong> <span>Following</span>{" "}
-                    <strong>10K</strong> <span>Followers</span>
+                    <strong>{this.state.userData.following}</strong>{" "}
+                    <span>Following</span>{" "}
+                    <strong>{this.state.userData.followers}</strong>{" "}
+                    <span>Followers</span>
                   </div>
                 </div>
               </div>
