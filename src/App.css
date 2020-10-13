@@ -640,6 +640,7 @@ a {
   width: 100%;
   min-height: 100px;
   max-height: 200px;
+  overflow: hidden;
 }
 .profile__backimg {
   width: 100%;
