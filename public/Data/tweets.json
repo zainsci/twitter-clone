@@ -4,7 +4,8 @@
     "username": "aristotle",
     "name": "Aristotle",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/220px-Aristotle_Altemps_Inv8575.jpg",
-    "tweetId": 11,
+    "tweetImg": "https://picsum.photos/id/10/600/800",
+    "tweetId": 0,
     "time": "Some Time Ago",
     "comment": "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
   },
@@ -13,7 +14,8 @@
     "username": "aristotle",
     "name": "Aristotle",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/220px-Aristotle_Altemps_Inv8575.jpg",
-    "tweetId": 10,
+    "tweetImg": "https://picsum.photos/id/1015/600/800",
+    "tweetId": 1,
     "time": "Some Time Ago",
     "comment": "It is the mark of an educated mind to be able to entertain a thought without accepting it."
   },
@@ -22,7 +24,8 @@
     "username": "plato",
     "name": "Plato",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Platon.png",
-    "tweetId": 9,
+    "tweetImg": "https://picsum.photos/id/1002/600/800",
+    "tweetId": 2,
     "time": "Some Time Ago",
     "comment": "Your silence gives consent."
   },
@@ -31,7 +34,8 @@
     "username": "plato",
     "name": "Plato",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Platon.png",
-    "tweetId": 8,
+    "tweetImg": "https://picsum.photos/id/1016/600/800",
+    "tweetId": 3,
     "time": "Some Time Ago",
     "comment": "Be kind, for everyone you meet is fighting a hard battle."
   },
@@ -40,7 +44,8 @@
     "username": "socrates",
     "name": "Socrates",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/a/a5/S%C3%B3crates.jpeg",
-    "tweetId": 7,
+    "tweetImg": "https://picsum.photos/id/1018/600/800",
+    "tweetId": 4,
     "time": "Some Time Ago",
     "comment": "An unexamined life is not worth living."
   },
@@ -49,7 +54,8 @@
     "username": "socrates",
     "name": "Socrates",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/a/a5/S%C3%B3crates.jpeg",
-    "tweetId": 6,
+    "tweetImg": "https://picsum.photos/id/1019/600/800",
+    "tweetId": 5,
     "time": "Some Time Ago",
     "comment": "I am the wisest man alive, for I know one thing, and that is that I know nothing."
   },
@@ -58,7 +64,8 @@
     "username": "nietzsche",
     "name": "Friedrich Nietzsche",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nietzsche187a.jpg/800px-Nietzsche187a.jpg",
-    "tweetId": 5,
+    "tweetImg": "https://picsum.photos/id/1022/600/800",
+    "tweetId": 6,
     "time": "Some Time Ago",
     "comment": "He who has a why to live can bear almost any how."
   },
@@ -67,7 +74,8 @@
     "username": "nietzsche",
     "name": "Friedrich Nietzsche",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nietzsche187a.jpg/800px-Nietzsche187a.jpg",
-    "tweetId": 4,
+    "tweetImg": "https://picsum.photos/id/1021/600/800",
+    "tweetId": 7,
     "time": "Some Time Ago",
     "comment": "To live is to suffer, to survive is to find some meaning in the suffering."
   },
@@ -76,7 +84,8 @@
     "username": "rushd",
     "name": "Ibn Rushd",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg",
-    "tweetId": 3,
+    "tweetImg": "https://picsum.photos/id/1026/600/800",
+    "tweetId": 8,
     "time": "Some Time Ago",
     "comment": "Two truths cannot contradict one another."
   },
@@ -85,7 +94,8 @@
     "username": "rushd",
     "name": "Ibn Rushd",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg",
-    "tweetId": 2,
+    "tweetImg": "https://picsum.photos/id/1040/600/800",
+    "tweetId": 9,
     "time": "Some Time Ago",
     "comment": "Knowledge is the conformity of the object and the intellect."
   },
@@ -94,7 +104,8 @@
     "username": "farabi",
     "name": "Al-Farabi",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/3/33/Iranian_Farabi.jpg",
-    "tweetId": 1,
+    "tweetImg": "https://picsum.photos/id/1043/600/800",
+    "tweetId": 10,
     "time": "Some Time Ago",
     "comment": "To accept something on mere presumption and, likewise, to fail to investigate it may cover over, blind, and lead astray."
   },
@@ -103,7 +114,8 @@
     "username": "farabi",
     "name": "Al-Farabi",
     "profileImg": "https://upload.wikimedia.org/wikipedia/commons/3/33/Iranian_Farabi.jpg",
-    "tweetId": 0,
+    "tweetImg": "https://picsum.photos/id/1044/600/800",
+    "tweetId": 11,
     "time": "Some Time Ago",
     "comment": "To accept something on mere presumption and, likewise, to fail to investigate it may cover over, blind, and lead astray."
   }
