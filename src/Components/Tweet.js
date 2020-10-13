@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Tweet extends React.Component {
   constructor(props) {
@@ -14,20 +14,18 @@ class Tweet extends React.Component {
       <>
         <div className="tweet__card">
           <div className="card__header">
-            <Link to={"/user/" + data.login.username}>
+            <Link to={"/user/" + data.userId}>
               <div className="card__header__img">
-                <img src={data.picture.medium} alt={data.login.username}></img>
+                <img src={data.profileImg} alt={data.username}></img>
               </div>
             </Link>
           </div>
           <div className="card__body">
             <div className="card__body__meta">
-              <Link to={"/user/" + data.login.username}>
-                <span className="cbm__name">
-                  {data.name.first + " " + data.name.last}
-                </span>
+              <Link to={"/user/" + data.userId}>
+                <span className="cbm__name">{data.name}</span>
               </Link>
-              <span className="cbm__username">@{data.login.username}</span>
+              <span className="cbm__username">@{data.username}</span>
               <span className="cbm__time">1 hour ago</span>
             </div>
             <div className="card__body__content">
@@ -35,15 +33,14 @@ class Tweet extends React.Component {
                 It is the mark of an educated mind to be able to entertain a
                 thought without accepting it.
               </p>
-              <div
-                className="cbc__img"
-                style={this.props.isThread ? { height: "fit-content" } : null}
-              >
-                <img
-                  src="https://picsum.photos/600"
-                  alt={data.login.username}
-                />
-              </div>
+              {data.tweetImg ? (
+                <div
+                  className="cbc__img"
+                  style={this.props.isThread ? { height: "fit-content" } : null}
+                >
+                  <img src={data.tweetImg} alt={data.username} />
+                </div>
+              ) : null}
             </div>
             <div className="card__body__feedback">
               <div className="cbf__comment btn">
