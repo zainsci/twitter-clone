@@ -1,0 +1,12 @@
+{
+    "userId": 2,
+    "username": "socrates",
+    "name": "Socrates",
+    "profileImg": "https://upload.wikimedia.org/wikipedia/commons/a/a5/S%C3%B3crates.jpeg",
+    "headerImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1024px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg",
+    "description": "It would be better for me... that multitudes of men should disagree with me rather than that I, being one, should be out of harmony with myself.",
+    "website": "https://en.wikipedia.org/wiki/Socrates",
+    "joined": "470 BC",
+    "following": "10",
+    "followers": "100 M"
+}
