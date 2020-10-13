@@ -11,12 +11,14 @@ class Explore extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://randomuser.me/api/?results=10")
+    fetch(
+      "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/tweets.json"
+    )
       .then((res) => res.json())
       .then((data) => this.setState({ tweetData: data, dataLoaded: true }));
   }
   render() {
-    let tweetData = this.state.tweetData.results;
+    let tweetData = this.state.tweetData;
     return (
       <div className="explore">
         <div className="explore__header">
@@ -26,8 +28,8 @@ class Explore extends React.Component {
           {this.state.dataLoaded
             ? tweetData.map((tweet) => (
                 <Link
-                  to={`/${tweet.login.username}/status/${tweet.login.salt}`}
-                  key={tweet.login.uuid}
+                  to={`/${tweet.username}/status/${tweet.tweetId}`}
+                  key={tweet.tweetId}
                 >
                   <Tweet tweetData={tweet} />
                 </Link>
