@@ -102,11 +102,11 @@ function User() {
           </div>
           <div className="userbody">Tweets</div>
           <div>
-            {userTweets.map((tweet) => {
+            {userTweets.map((tweet) =>
               tweet.userId == parseInt(id, 10) ? (
                 <Tweet tweetData={tweet} />
-              ) : null;
-            })}
+              ) : null
+            )}
           </div>
         </>
       ) : (
