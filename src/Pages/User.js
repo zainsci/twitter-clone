@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Tweet from "../Components/Tweet";
 
 function GetParams() {
   let { id } = useParams();
@@ -100,6 +101,13 @@ function User() {
             </div>
           </div>
           <div className="userbody">Tweets</div>
+          <div>
+            {userTweets.map((tweet) => {
+              tweet.userId == parseInt(id, 10) ? (
+                <Tweet tweetData={tweet} />
+              ) : null;
+            })}
+          </div>
         </>
       ) : (
         <div style={{ width: "80px", margin: "auto" }}>
