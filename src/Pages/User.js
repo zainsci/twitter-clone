@@ -9,6 +9,7 @@ function GetParams() {
 
 function User() {
   const [userData, setUserData] = useState({});
+  const [userTweets, setuserTweets] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
 
   const id = GetParams();
@@ -21,6 +22,14 @@ function User() {
       .then((data) => {
         setUserData(data);
         setIsLoaded(true);
+      });
+    fetch(
+      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/tweets.json`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setuserTweets(data);
+        console.log(data);
       });
   });
 
