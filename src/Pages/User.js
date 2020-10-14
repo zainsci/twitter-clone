@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Tweet from "../Components/Tweet";
 
@@ -104,7 +104,9 @@ function User() {
           <div>
             {userTweets.map((tweet) =>
               tweet.userId == parseInt(id, 10) ? (
-                <Tweet tweetData={tweet} />
+                <Link to={`/${tweet.username}/status/${tweet.tweetId}`}>
+                  <Tweet tweetData={tweet} />
+                </Link>
               ) : null
             )}
           </div>
