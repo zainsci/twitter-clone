@@ -39,8 +39,8 @@ class Trends extends React.Component {
         <div className="trends__body">
           <ul className="trends__list">
             {this.state.isDataLoaded
-              ? this.state.trends.map((trend) => (
-                  <Link to="/trends/01">
+              ? this.state.trends.map((trend, i) => (
+                  <Link to="/trends/01" key={i}>
                     <li className="trends__list__item">
                       <div className="trend__category">
                         {trend.tag} • Trending
