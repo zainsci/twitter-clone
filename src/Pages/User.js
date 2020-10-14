@@ -10,7 +10,7 @@ function GetParams() {
 
 function User() {
   const [userData, setUserData] = useState({});
-  const [userTweets, setuserTweets] = useState({});
+  const [userTweets, setuserTweets] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const id = GetParams();
