@@ -1,20 +1,26 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+function GetParams() {
+  let { id } = useParams();
+  return id;
+}
 
 function User() {
   const [userData, setUserData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const id = GetParams();
+
   useEffect(() => {
     fetch(
-      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/profiles/0.json`
+      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/profiles/${id}.json`
     )
       .then((res) => res.json())
       .then((data) => {
         setUserData(data);
         setIsLoaded(true);
-        console.log(data);
       });
   });
 
