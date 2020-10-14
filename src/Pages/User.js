@@ -6,6 +6,18 @@ function User() {
   const [userData, setUserData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    fetch(
+      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/profiles/0.json`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setUserData(data);
+        setIsLoaded(true);
+        console.log(data);
+      });
+  });
+
   return (
     <div className="userpage">
       {isLoaded ? (
