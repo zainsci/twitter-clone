@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Tweet from "./Tweet";
+
+const GetParams = () => {
+  let { user, id } = useParams();
+  return { user, id };
+};
 
 function Thread() {
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [tweetData, setTweetData] = useState({});
 
+  let { user, id } = GetParams();
+
   useEffect(() => {
-    fetch("https://randomuser.me/api/")
+    fetch(
+      `https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/tweets.json`
+    )
       .then((res) => res.json())
-      .then((data) =>
-        this.setState({ tweetData: data.results[0], isDataLoaded: true })
-      );
+      .then((data) => {
+        data.map((tweet) => {
+          if (tweet.tweetId == parseInt(id, 10)) {
+            console.log(tweet);
+            setTweetData(tweet);
+            setDataLoaded(true);
+          }
+        });
+      });
   });
   return (
     <>
-      {this.state.isDataLoaded ? (
-        <Tweet tweetData={this.state.tweetData} isThread={true} />
+      {isDataLoaded ? (
+        <Tweet tweetData={tweetData} isThread={true} />
       ) : (
         <div style={{ width: "80px", margin: "auto" }}>
           <img
