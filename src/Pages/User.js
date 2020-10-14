@@ -3,6 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function User() {
+  const [userData, setUserData] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div className="userpage">
       {isLoaded ? (
