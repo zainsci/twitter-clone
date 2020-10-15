@@ -41,12 +41,12 @@ function User() {
           <div className="propfile">
             <div className="profile__header">
               <div className="profile__backimg">
-                <img src={userData.headerImg} />
+                <img src={userData.headerImg} alt="Header" />
               </div>
             </div>
             <div className="profile__body">
               <div className="profile__img">
-                <img src={userData.profileImg} />
+                <img src={userData.profileImg} alt="Profile" />
               </div>
               <div className="profile__follow">
                 <button className="btn btn-secondary btn-border">Follow</button>
@@ -103,7 +103,7 @@ function User() {
           <div className="userbody">Tweets</div>
           <div>
             {userTweets.map((tweet) =>
-              tweet.userId == parseInt(id, 10) ? (
+              tweet.userId === parseInt(id, 10) ? (
                 <Link to={`/${tweet.username}/status/${tweet.tweetId}`}>
                   <Tweet tweetData={tweet} />
                 </Link>
@@ -118,6 +118,7 @@ function User() {
             width="80px"
             height="80px"
             style={{ margin: "auto" }}
+            alt="Loading"
           />
         </div>
       )}

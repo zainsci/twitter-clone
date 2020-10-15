@@ -36,6 +36,7 @@ class Trend extends React.Component {
               width="80px"
               height="80px"
               style={{ margin: "auto" }}
+              alt="Loading"
             />
           </div>
         )}

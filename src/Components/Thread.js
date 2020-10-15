@@ -4,15 +4,15 @@ import Tweet from "./Tweet";
 import Comment from "./Comment";
 
 const GetParams = () => {
-  let { user, id } = useParams();
-  return { user, id };
+  let { id } = useParams();
+  return { id };
 };
 
 function Thread() {
   const [isDataLoaded, setDataLoaded] = useState(false);
   const [tweetData, setTweetData] = useState({});
 
-  let { user, id } = GetParams();
+  let { id } = GetParams();
 
   useEffect(() => {
     fetch(
@@ -21,11 +21,11 @@ function Thread() {
       .then((res) => res.json())
       .then((data) => {
         data.map((tweet) => {
-          if (tweet.tweetId == parseInt(id, 10)) {
-            console.log(tweet);
+          if (tweet.tweetId === parseInt(id, 10)) {
             setTweetData(tweet);
             setDataLoaded(true);
           }
+          return true;
         });
       });
   });
@@ -43,6 +43,7 @@ function Thread() {
             width="80px"
             height="80px"
             style={{ margin: "auto" }}
+            alt="Loading"
           />
         </div>
       )}

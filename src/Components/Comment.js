@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import Tweet from "./Tweet";
 
 class Comment extends React.Component {
