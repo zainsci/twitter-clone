@@ -1,5 +1,14 @@
 # Twitter CLone With React.js
 
+Twitter Clone with React.js as a side project for learning React as well React Router.
+
+Only Following Pages/Features Implemented.
+
+1. Login and Signup Pages with Form Validation the Way Twitter Uses it.
+2. /Explore Page with Trends and Some Tweets
+3. Clicking User Image or Name will Open User Account Page
+4. Clicking Tweet Page Will Open Thread Page with Comment On The Tweet.
+
 ## Available Scripts
 
 In the project directory, you can run:
