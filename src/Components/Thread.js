@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Tweet from "./Tweet";
+import Comment from "./Comment";
 
 const GetParams = () => {
   let { user, id } = useParams();
@@ -31,7 +32,10 @@ function Thread() {
   return (
     <>
       {isDataLoaded ? (
-        <Tweet tweetData={tweetData} isThread={true} />
+        <>
+          <Tweet tweetData={tweetData} isThread={true} />
+          <Comment />
+        </>
       ) : (
         <div style={{ width: "80px", margin: "auto" }}>
           <img
