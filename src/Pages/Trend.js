@@ -11,11 +11,11 @@ class Trend extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://randomuser.me/api/?results=10")
+    fetch(
+      "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/tweets.json"
+    )
       .then((res) => res.json())
-      .then((data) =>
-        this.setState({ tweetData: data.results, dataLoaded: true })
-      );
+      .then((data) => this.setState({ tweetData: data, dataLoaded: true }));
   }
   render() {
     return (
@@ -23,8 +23,8 @@ class Trend extends React.Component {
         {this.state.dataLoaded ? (
           this.state.tweetData.map((tweet) => (
             <Link
-              to={`/${tweet.login.username}/status/${tweet.login.salt}`}
-              key={tweet.login.uuid}
+              to={`/${tweet.username}/status/${tweet.tweetId}`}
+              key={tweet.tweetId}
             >
               <Tweet tweetData={tweet} />
             </Link>
