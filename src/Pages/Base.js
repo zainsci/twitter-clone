@@ -128,7 +128,6 @@ class Base extends React.Component {
                 </Route>
                 <Route path="/user/:id">
                   <User />
-                  {/* <Trend /> */}
                 </Route>
               </Switch>
             </div>
