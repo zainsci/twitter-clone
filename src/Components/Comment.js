@@ -12,7 +12,7 @@ class Comment extends React.Component {
   }
   componentDidMount() {
     fetch(
-      "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/tweets.json"
+      "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/comments.json"
     )
       .then((res) => res.json())
       .then((data) => this.setState({ comments: data, dataLoaded: true }));
