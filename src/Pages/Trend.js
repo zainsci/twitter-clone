@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Tweet from "../Components/Tweet";
 
-class Trend extends React.Component {
+export default class Trend extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,5 +44,3 @@ class Trend extends React.Component {
     );
   }
 }
-
-export default Trend;

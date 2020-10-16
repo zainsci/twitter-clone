@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class LandingPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+export default class LandingPage extends React.Component {
   render() {
     return (
       <>
@@ -103,5 +98,3 @@ class LandingPage extends React.Component {
     );
   }
 }
-
-export default LandingPage;

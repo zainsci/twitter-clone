@@ -6,7 +6,7 @@ import Trend from "./Trend";
 import Thread from "../Components/Thread";
 import User from "./User";
 
-class Base extends React.Component {
+export default class Base extends React.Component {
   render() {
     return (
       <div>
@@ -131,5 +131,3 @@ class Base extends React.Component {
     );
   }
 }
-
-export default Base;
