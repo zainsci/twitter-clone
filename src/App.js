@@ -7,42 +7,22 @@ import Base from "./Pages/Base";
 import Login from "./Components/Login";
 import SignUp from "./Components/Signup";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/" exact>
-              <LandingPage />
-            </Route>
-            <Route path="/explore">
-              <Base />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            <Route path="/trends/:trend">
-              <Base />
-            </Route>
-            <Route path="/:user/status/:id">
-              <Base />
-            </Route>
-            <Route path="/:username">
-              <Base />
-            </Route>
+            <Route path="/" exact component={LandingPage} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/explore" component={Base} />
+            <Route path="/trends/:trend" component={Base} />
+            <Route path="/:user/status/:id" component={Base} />
+            <Route path="/:username" component={Base} />
           </Switch>
         </Router>
       </div>
     );
   }
 }
-
-export default App;
