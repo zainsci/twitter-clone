@@ -93,6 +93,9 @@ class LandingPage extends React.Component {
                 <Link to="/login" className="btn btn-secondary btn-border ">
                   Log in
                 </Link>
+                <Link to="/explore" className="btn btn-primary">
+                  Explore
+                </Link>
               </div>
             </div>
           </div>
