@@ -2,12 +2,16 @@
 
 Twitter Clone with React.js as a side project for learning React as well React Router.
 
+Site: https://nifty-meitner-589854.netlify.app/
+
 Only Following Pages/Features Implemented.
 
 1. Login and Signup Pages with Form Validation the Way Twitter Uses it.
 2. /Explore Page with Trends and Some Tweets
 3. Clicking User Image or Name will Open User Account Page
 4. Clicking Tweet Page Will Open Thread Page with Comment On The Tweet.
+
+Note: I didn't intended it to be exact like twitter like clicking the like button will not function the way it does on twitter and also many things i didn't included because of part not having enough time part not wanting to.
 
 ## Available Scripts
 
