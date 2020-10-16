@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Laoding from "../Components/Loading";
 import Tweet from "../Components/Tweet";
 
-class Explore extends React.Component {
+export default class Explore extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,20 +26,20 @@ class Explore extends React.Component {
           <h3>What's Happening</h3>
         </div>
         <div className="explore__cards">
-          {this.state.dataLoaded
-            ? tweetData.map((tweet) => (
-                <Link
-                  to={`/${tweet.username}/status/${tweet.tweetId}`}
-                  key={tweet.tweetId}
-                >
-                  <Tweet tweetData={tweet} />
-                </Link>
-              ))
-            : null}
+          {this.state.dataLoaded ? (
+            tweetData.map((tweet) => (
+              <Link
+                to={`/${tweet.username}/status/${tweet.tweetId}`}
+                key={tweet.tweetId}
+              >
+                <Tweet tweetData={tweet} />
+              </Link>
+            ))
+          ) : (
+            <Laoding />
+          )}
         </div>
       </div>
     );
   }
 }
-
-export default Explore;
