@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class Tweet extends React.Component {
+export default class Tweet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -99,4 +99,3 @@ class Tweet extends React.Component {
     );
   }
 }
-export default Tweet;

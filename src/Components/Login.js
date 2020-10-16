@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Signup from "./Signup";
 import ForgetPassword from "./ForgetPassword";
 
-class Login extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isFormValid: false,
     };
   }
+
   formValid = () => {
     let username = document.getElementById("login-username").value;
     let password = document.getElementById("login-password").value;
@@ -24,6 +25,7 @@ class Login extends React.Component {
       });
     }
   };
+
   render() {
     return (
       <Router>
@@ -87,5 +89,3 @@ class Login extends React.Component {
     );
   }
 }
-
-export default Login;

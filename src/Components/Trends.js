@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Laoding from "./Loading";
 
 class Trends extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Trends extends React.Component {
       isDataLoaded: false,
     };
   }
+
   componentDidMount() {
     fetch(
       "https://raw.githubusercontent.com/zainsci/twitter-clone/master/public/Data/trends.json"
@@ -17,6 +19,7 @@ class Trends extends React.Component {
       .then((res) => res.json())
       .then((data) => this.setState({ trends: data, isDataLoaded: true }));
   }
+
   render() {
     return (
       <div
@@ -38,23 +41,25 @@ class Trends extends React.Component {
         </div>
         <div className="trends__body">
           <ul className="trends__list">
-            {this.state.isDataLoaded
-              ? this.state.trends.map((trend, i) => (
-                  <Link to="/trends/01" key={i}>
-                    <li className="trends__list__item">
-                      <div className="trend__category">
-                        {trend.tag} • Trending
-                      </div>
-                      <div className="trend__name">
-                        <h3>{trend.name}</h3>
-                      </div>
-                      <div className="trend__tweets">
-                        {trend.noOfTweets} Tweets
-                      </div>
-                    </li>
-                  </Link>
-                ))
-              : null}
+            {this.state.isDataLoaded ? (
+              this.state.trends.map((trend, i) => (
+                <Link to="/trends/01" key={i}>
+                  <li className="trends__list__item">
+                    <div className="trend__category">
+                      {trend.tag} • Trending
+                    </div>
+                    <div className="trend__name">
+                      <h3>{trend.name}</h3>
+                    </div>
+                    <div className="trend__tweets">
+                      {trend.noOfTweets} Tweets
+                    </div>
+                  </li>
+                </Link>
+              ))
+            ) : (
+              <Laoding />
+            )}
           </ul>
         </div>
       </div>

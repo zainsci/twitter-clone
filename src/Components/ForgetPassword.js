@@ -1,10 +1,6 @@
 import React from "react";
 
-class ForgetPassword extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+export default class ForgetPassword extends React.Component {
   render() {
     return (
       <div>
@@ -24,5 +20,3 @@ class ForgetPassword extends React.Component {
     );
   }
 }
-
-export default ForgetPassword;
