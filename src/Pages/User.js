@@ -2,13 +2,14 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Tweet from "../Components/Tweet";
+import Laoding from "../Components/Loading";
 
 function GetParams() {
   let { id } = useParams();
   return id;
 }
 
-function User() {
+export default function User() {
   const [userData, setUserData] = useState({});
   const [userTweets, setuserTweets] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -112,18 +113,8 @@ function User() {
           </div>
         </>
       ) : (
-        <div style={{ width: "80px", margin: "auto" }}>
-          <img
-            src="https://abs.twimg.com/a/1496350504/img/t1/Spinner-Dots-30fps-200px.gif"
-            width="80px"
-            height="80px"
-            style={{ margin: "auto" }}
-            alt="Loading"
-          />
-        </div>
+        <Laoding />
       )}
     </div>
   );
 }
-
-export default User;
