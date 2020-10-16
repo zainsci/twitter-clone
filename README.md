@@ -11,7 +11,9 @@ Only Following Pages/Features Implemented.
 3. Clicking User Image or Name will Open User Account Page
 4. Clicking Tweet Page Will Open Thread Page with Comment On The Tweet.
 
-Note: I didn't intended it to be exact like twitter like clicking the like button will not function the way it does on twitter and also many things i didn't included because of part not having enough time part not wanting to.
+Note: I didn't intended it to be exact like twitter like clicking the like button will not function the way it does on twitter and also many things i didn't included because of part not having enough time part not wanting to. May be in future i will try to make it exactly like twitter if twitter stayed the same as it does now.
+
+Closed: 16-10-2020
 
 ## Available Scripts
 
