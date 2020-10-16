@@ -7,11 +7,6 @@ import Thread from "../Components/Thread";
 import User from "./User";
 
 class Base extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div>
@@ -19,7 +14,7 @@ class Base extends React.Component {
           <div className="base__nav">
             <header>
               <div className="logo">
-                <Link to="/explore">
+                <Link to="/">
                   <svg
                     fill="#1DA1F2"
                     viewBox="0 0 24 24"
@@ -122,15 +117,9 @@ class Base extends React.Component {
                   <Trends isExploreSection={true} />
                   <Explore />
                 </Route>
-                <Route path="/trends/:trend">
-                  <Trend />
-                </Route>
-                <Route path="/:user/status/:id">
-                  <Thread />
-                </Route>
-                <Route path="/user/:id">
-                  <User />
-                </Route>
+                <Route path="/trends/:trend" component={Trend} />
+                <Route path="/:user/status/:id" component={Thread} />
+                <Route path="/user/:id" component={User} />
               </Switch>
             </div>
           </div>
